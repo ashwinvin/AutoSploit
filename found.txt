@@ -1,0 +1,1 @@
+# Hydra v8.6 run at 2019-05-30 11:39:55 on 192.168.1.1 ssh (hydra -l crackuser.txt -t 4 -P crackpass.txt -o found.txt ssh://192.168.1.1)

@@ -1,0 +1,12 @@
+mysql
+info
+postgres
+guest
+nagios
+user
+oracle
+admin
+test
+root
+toor
+changeme
