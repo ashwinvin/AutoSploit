@@ -13,23 +13,6 @@ global rest, opt, pass1, count
 global comad
 global HostStatus
 global opt2
-global pass4, pass5
-pass4 =[]
-pass5 =[]
-
-def arrayMaker(pass4, pass5):
-    passfile = open("crackpass.txt", "r")
-    for line in passfile.readlines():
-        arr = 1
-        if arr==1:
-            passex = line.strip('\n')
-            pass4.append(passex)
-            arr = 2
-        else:
-            passex = line.strip('\n')
-            pass5.append(passex)
-            arr = 1
-    pass
 
 def ssh_connect(ip, user, password):
     passfile = open("crackpass.txt", "r")
@@ -60,8 +43,8 @@ def ssh_connect(ip, user, password):
                     print("[*] CONTINUING")
             else:
                 print ("[*] Found password:" + password)
-            
-            
+
+
 
 def scanner(comad, ip):
     result = subprocess.getoutput(comad)
@@ -108,26 +91,26 @@ def main():
         try:
             sys_p0 = sys.argv[4]
             cmdmake(sys_ip0 , sys_p0)
-            
+
         except IndexError:
             print("[-] Port not given")
             print("[*] Switching to default port : 22")
             sys_ip0 = "22"
             cmdmake(sys_ip0 , sys_p0)
-            
+
     else:
         try:
             sys_ip0 = sys.argv[4]
-            
+
         except IndexError:
              print("[-] IP not Given ")
              print("[-] Exiting ")
              quit()
-             
+
         try:
             sys_p0 = sys.argv[2]
             cmdmake(sys_ip0 , sys_p0)
-            
+
         except IndexError:
             print("[-] Port not given")
             print("[*] Switching to default port : 22")
@@ -137,4 +120,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-    
